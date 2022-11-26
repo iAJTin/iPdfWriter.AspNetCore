@@ -39,8 +39,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iTin.Utilities.Pdf.Writer.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Utilities.Pdf.Writer.AspNetCore", "src\lib\iTin.Utilities\iTin.Utilities.Pdf\iTin.Utilities.Pdf.Writer\iTin.Utilities.Pdf.Writer.AspNetCore\iTin.Utilities.Pdf.Writer.AspNetCore.csproj", "{7861DE8B-5FC9-4E58-9383-745416709F15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPdfWriter.AspNetCore.WebApi", "src\samples\iPdfWriter.AspNetCore.WebApi\iPdfWriter.AspNetCore.WebApi.csproj", "{3ABFC999-2500-4A48-A1A0-7815C6EDF870}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,10 +65,6 @@ Global
 		{7861DE8B-5FC9-4E58-9383-745416709F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7861DE8B-5FC9-4E58-9383-745416709F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7861DE8B-5FC9-4E58-9383-745416709F15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3ABFC999-2500-4A48-A1A0-7815C6EDF870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ABFC999-2500-4A48-A1A0-7815C6EDF870}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ABFC999-2500-4A48-A1A0-7815C6EDF870}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3ABFC999-2500-4A48-A1A0-7815C6EDF870}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,7 +86,6 @@ Global
 		{58ACC0C9-5D01-4FD0-A94C-2D37B8C9B8A1} = {FDD37B88-2451-4828-9AF1-838FD77D4D9D}
 		{A085A0A5-264A-4763-8774-C5AC03161EC7} = {9FB1D0AE-8B72-4808-BB44-802FB23C2C39}
 		{7861DE8B-5FC9-4E58-9383-745416709F15} = {A085A0A5-264A-4763-8774-C5AC03161EC7}
-		{3ABFC999-2500-4A48-A1A0-7815C6EDF870} = {3FD00F9D-D391-4E05-8CB6-C3D4D34D225C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EE9A9FE-ED76-4DD1-96A3-8B073167957F}
