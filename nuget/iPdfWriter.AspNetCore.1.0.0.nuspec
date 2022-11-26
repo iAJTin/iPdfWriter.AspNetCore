@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+	<metadata>
+		<id>iPdfWriter.AspNetCore</id>
+		<version>1.0.0</version>
+		<title>iPdfWriter.AspNetCore</title>
+		<authors>iAJTin</authors>
+		<owners>iAJTin</owners>
+    <readme>.\README.md</readme>
+		<license type="expression">AGPL-3.0-only</license>
+		<projectUrl>https://github.com/iAJTin/iPdfWriter.AspNetCore</projectUrl>
+		<icon>.\iPdfWriter.AspNetCore.png</icon>
+		<iconUrl>https://raw.githubusercontent.com/iAJTin/iPdfWriter.AspNet/master/nuget/iPdfWriter.AspNetCore.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+      iPdfWriter.AspNet, extends iPdfWriter to work in AspNetCore projects, contains extension methods to download PdfInput instances
+      as well as OutputResult, facilitating its use in this environment
+    </description>
+		<copyright>Copyright © 2022 iAJTin</copyright>
+		<tags>iPdfWriter PDF Writer Adobe iTin</tags>
+		<repository type="git" url="https://github.com/iAJTin/iPdfWriter.AspNetCore"/>
+	</metadata>
+	<files>
+    <file src=".\README.md" target="." />
+    <file src="..\README.txt" target="." />
+    <file src=".\iPdfWriter.AspNetCore.png" target="." />
+		<file src="..\src\lib\iTin.Utilities\iTin.Utilities.Pdf\iTin.Utilities.Pdf.Writer\iTin.Utilities.Pdf.Writer.AspNetCore\bin\Debug\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
+	</files>
+</package>
