@@ -13,17 +13,33 @@
 		<iconUrl>https://raw.githubusercontent.com/iAJTin/iPdfWriter.AspNet/master/nuget/iPdfWriter.AspNetCore.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>
-      iPdfWriter.AspNet, extends iPdfWriter to work in AspNetCore projects, contains extension methods to download PdfInput instances
-      as well as OutputResult, facilitating its use in this environment
+      iPdfWriter.AspNetCore, extends iPdfWriter to work in AspNetCore projects, contains extension methods to download PdfInput instances as well as OutputResult, facilitating its use in this environment
     </description>
 		<copyright>Copyright © 2022 iAJTin</copyright>
 		<tags>iPdfWriter PDF Writer Adobe iTin</tags>
 		<repository type="git" url="https://github.com/iAJTin/iPdfWriter.AspNetCore"/>
-	</metadata>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="iPdfWriter.Abstractions" version="1.0.1" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="iPdfWriter.Abstractions" version="1.0.1" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="iPdfWriter.Abstractions" version="1.0.1" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="iPdfWriter.Abstractions" version="1.0.1" />
+      </group>
+      <group targetFramework="net60">
+        <dependency id="iPdfWriter.Abstractions" version="1.0.1" />
+      </group>
+    </dependencies>
+  </metadata>
 	<files>
     <file src=".\README.md" target="." />
     <file src="..\README.txt" target="." />
     <file src=".\iPdfWriter.AspNetCore.png" target="." />
-		<file src="..\src\lib\iTin.Utilities\iTin.Utilities.Pdf\iTin.Utilities.Pdf.Writer\iTin.Utilities.Pdf.Writer.AspNetCore\bin\Debug\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
+		<file src="..\src\lib\iPdfWriter\iPdfWriter.AspNetCore\bin\Debug\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
 	</files>
 </package>

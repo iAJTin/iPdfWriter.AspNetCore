@@ -11,7 +11,7 @@
 
 # What is iPdfWriter.AspNetCore?
 
-**iPdfWriter.AspNetCore**, extends [iPdfWriter] to work in **AspNetCore** projects, contains extension methods to download **PdfInput** instances as well as **OutputResult**, facilitating its use in this environment.
+**iPdfWriter.AspNetCore**, extends [iPdfWriter](https://github.com/iAJTin/iPdfWriter) to work in **AspNetCore** projects, contains extension methods to download **PdfInput** instances as well as **OutputResult**, facilitating its use in this environment.
 
 I hope it helps someone. :smirk:
 
@@ -43,46 +43,98 @@ I hope it helps someone. :smirk:
 
 ## Samples
 
-### Sample 1 - Shows the use of synchronous download
+### Sample 1 - Shows the use by extension method
 
-    ```csharp   
-    public class AdobeReportController : ApiController
+##### Program.cs
+
+- Adds **HttpContextAccessor** service.
+
+```csharp
+...
+...
+builder.Services.AddHttpContextAccessor();
+...
+...
+```
+
+##### Controller
+
+```csharp
+[ApiController]
+[Route("[controller]")]
+public class AdobeReportByExtensionController : ControllerBase
+{
+    private readonly IHttpContextAccessor _context;
+
+
+    public AdobeReportByExtensionController(IHttpContextAccessor context)
     {
-        public void Get()
+        _context = context;
+    }
+
+
+    [HttpGet]
+    public async Task GetAsync()
+    {
+        var downloadResult = await (await Sample01.GenerateAsync()).DownloadAsync(context: _context.HttpContext);
+        if (!downloadResult.Success)
         {
-            var downloadResult = Sample01.Generate().Download();
+            // Handle error(s)
+        }
+    }
+}
+```
+
+### Sample 2 - Shows the use by DownloadAsync action
+
+##### Program.cs
+
+- Adds **HttpContextAccessor** service.
+
+```csharp
+...
+...
+builder.Services.AddHttpContextAccessor();
+...
+...
+```
+
+##### Controller
+
+```csharp   
+[ApiController]
+[Route("[controller]")]
+public class AdobeReportByActionController : ControllerBase
+{
+    private readonly IHttpContextAccessor _context;
+
+
+    public AdobeReportByActionController(IHttpContextAccessor context)
+    {
+        _context = context;
+    }
+
+
+    [HttpGet]
+    public async Task GetAsync()
+    {
+        var result = await Sample01.GenerateAsync();
+        if (result.Success)
+        {
+            var safeOutputData = result.Result;
+            var downloadResult = await safeOutputData.Action(new DownloadAsync { Context = _context.HttpContext });
             if (!downloadResult.Success)
             {
                 // Handle error(s)
             }
         }
     }
-    ```
-
-### Sample 2 - Shows the use of asynchronous download by DownloadAsync action
-
-    ```csharp   
-    public class AdobeReportAsyncController : ApiController
-    {
-        public async Task GetAsync()
-        {
-            var result = await Sample01.GenerateAsync();
-            if (result.Success)
-            {
-                var safeOutputData = result.Result;
-                var downloadResult = await safeOutputData.Action(new DownloadAsync());
-                if (!downloadResult.Success)
-                {
-                    // Handle error(s)
-                }
-            }
-        }
-    }
-    ```
+}
+```
 
 # Documentation
 
- - Please see next link [documentation].
+ - Please see next link [documentation]
 
 # How can I send feedback!!!
 
@@ -95,5 +147,4 @@ My email address is
 
 [email]: ./assets/email.png "email"
 
-[documentation]: ./documentation/iTin.Utilities.Pdf.Writer.AspNetCore.md
-[iPdfWriter]: https://github.com/iAJTin/iPdfWriter
+[documentation]: ./documentation/iPdfWriter.AspNetCore.md

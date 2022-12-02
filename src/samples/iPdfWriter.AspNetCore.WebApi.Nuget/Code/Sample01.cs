@@ -12,7 +12,7 @@ using iPdfWriter.Operations.Replace.Replacement.Text;
 namespace iPdfWriter.AspNetCore.WebApi.Code
 {
     using ComponentModel.Helpers;
-
+    
     internal static class Sample01
     {
         public static PdfInput BuildPdfInput(YesNo useTestMode = YesNo.No)
@@ -61,7 +61,7 @@ namespace iPdfWriter.AspNetCore.WebApi.Code
         }
 
 
-        public static async Task<OutputResult> GenerateAsync(YesNo useTestMode = YesNo.No, CancellationToken cancellationToken = default) => 
+        public static async Task<OutputResult> GenerateAsync(YesNo useTestMode = YesNo.No, CancellationToken cancellationToken = default) =>
             await BuildPdfInput(useTestMode).CreateResultAsync(cancellationToken: cancellationToken);
     }
 }
