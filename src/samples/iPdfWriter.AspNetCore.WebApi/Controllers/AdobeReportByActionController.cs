@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 
-using iPdfWriter.Abstractions.Writer.Operations.Result.Actions;
+using iPdfWriter.Abstractions.Writer.Operations.Actions;
 
 namespace iPdfWriter.AspNetCore.WebApi.Controllers
 {
