@@ -96,3 +96,8 @@ public class AdobeReportByActionController : ControllerBase
     }
 }
 ```
+
+# Changes
+
+For more information, please visit the next link [CHANGELOG](https://github.com/iAJTin/iPdfWriter.AspNetCore/blob/master/CHANGELOG.md)
+

@@ -35,3 +35,9 @@ Documentation
 =============
 
  - Please see next link https://github.com/iAJTin/iPdfWriter.AspNetCore/blob/master/documentation/iPdfWriter.AspNetCore.md
+
+
+Changes
+=======
+
+For more information, please visit the next link https://github.com/iAJTin/iPdfWriter.AspNetCore/blob/master/CHANGELOG.md
