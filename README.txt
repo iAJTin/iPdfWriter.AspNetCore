@@ -5,8 +5,16 @@ What is iPdfWriter.AspNetCore?
 iPdfWriter.AspNetCore, extends iPdfWriter to work in AspNetCore projects, contains extension methods to download PdfInput instances 
 as well as OutputResult, facilitating its use in this environment.
 
-Changes in this version (v1.0.0)
+Changes in this version (v1.0.1)
 ================================
+
+· Added
+  -----
+
+  - Multiple Repository is used.
+
+v1.0.0
+======
 
 · Added
   -----

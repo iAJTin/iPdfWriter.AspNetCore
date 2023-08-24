@@ -15,12 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="iPdfWriter" Version="1.0.6" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\iPdfWriter\iPdfWriter.AspNetCore\iPdfWriter.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\..\..\iPdfWriter\src\lib\iPdfWriter\iPdfWriter\iPdfWriter.csproj" />
+    <ProjectReference Include="..\..\lib\iPdfWriter.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

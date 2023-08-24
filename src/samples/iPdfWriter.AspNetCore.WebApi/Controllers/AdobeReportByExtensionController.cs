@@ -1,33 +1,30 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 
-using iPdfWriter.Abstractions.Writer.Operations.Results;
+namespace iPdfWriter.AspNetCore.WebApi.Controllers;
 
-namespace iPdfWriter.AspNetCore.WebApi.Controllers
+using Code;
+
+[ApiController]
+[Route("[controller]")]
+public class AdobeReportByExtensionController : ControllerBase
 {
-    using Code;
+    private readonly IHttpContextAccessor _context;
 
-    [ApiController]
-    [Route("[controller]")]
-    public class AdobeReportByExtensionController : ControllerBase
+
+    public AdobeReportByExtensionController(IHttpContextAccessor context)
     {
-        private readonly IHttpContextAccessor _context;
+        _context = context;
+    }
 
 
-        public AdobeReportByExtensionController(IHttpContextAccessor context)
+    [HttpGet]
+    public async Task Get()
+    {
+        var downloadResult = await (await Sample01.GenerateAsync()).DownloadAsync(context: _context.HttpContext);
+        if (!downloadResult.Success)
         {
-            _context = context;
-        }
-
-
-        [HttpGet]
-        public async Task Get()
-        {
-            var downloadResult = await (await Sample01.GenerateAsync()).DownloadAsync(context: _context.HttpContext);
-            if (!downloadResult.Success)
-            {
-                // Handle error(s)
-            }
+            // Handle error(s)
         }
     }
 }
